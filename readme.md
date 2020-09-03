@@ -21,5 +21,9 @@ add(1, 2)
 ```
 
 Will then push payloads to the django server, and are accessible by the django
-dashboard. Other options include writing to a csv file or printing to a log.
+dashboard. 
+
+![](https://media.discordapp.net/attachments/636989395853115403/750951448061149244/unknown.png)
+
+Other options include writing to a csv file or printing to a log.
 Only records timing information.
