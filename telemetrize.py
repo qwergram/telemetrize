@@ -128,25 +128,28 @@ def ping_server(message: dict, target: str):
     message['kwargs'] = str(message['kwargs'])
     print(requests.post(target, data=message))
 
-@telemetrize('add')
-def add(a, b):
-    return a + b
+if __name__ == "__main__":
+    print("Show casing an example")
+    
+    @telemetrize('add')
+    def add(a, b):
+        return a + b
 
-@telemetrize('sub')
-def sub(a, b):
-    time.sleep(0.01)
-    return a + b
+    @telemetrize('sub')
+    def sub(a, b):
+        time.sleep(0.01)
+        return a + b
 
-OPERATION = lambda message: ping_server(message, 'http://127.0.0.1:8000/endpoint/')
+    OPERATION = lambda message: ping_server(message, 'http://127.0.0.1:8000/endpoint/')
 
-with TimeProfiler('weird-multiplies'):
-    235 * 432
-    235 * 432
-    235 * 432
-    time.sleep(0.1)
-    235 ** 432
+    with TimeProfiler('weird-multiplies'):
+        235 * 432
+        235 * 432
+        235 * 432
+        time.sleep(0.1)
+        235 ** 432
 
-add(1, 2)
-add('a', 'b')
-sub(1, 2)
-sub(82, 3)
+    add(1, 2)
+    add('a', 'b')
+    sub(1, 2)
+    sub(82, 3)
